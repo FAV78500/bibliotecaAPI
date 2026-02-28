@@ -21,7 +21,7 @@ class User(BaseModel):
 
 class BookCreate(BaseModel):
     nombre: str = Field(..., min_length=2, max_length=100)
-    anio: int = Field(..., gt=1450, le=datetime.now().year)
+    año: int = Field(..., gt=1450, le=datetime.now().year)
     paginas: int = Field(..., gt=1)
 
 class Book(BookCreate):
