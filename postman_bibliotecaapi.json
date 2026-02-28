@@ -1,0 +1,177 @@
+{
+    "info": {
+        "name": "Biblioteca API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "1. Registrar libro",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"nombre\": \"Don Quijote\",\n  \"año\": 1605,\n  \"paginas\": 863\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/books/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "books",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "2. Listar todos los libros disponibles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/books/disponibles",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "books",
+                        "disponibles"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "3. Buscar un libro por nombre",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/books/search?nombre=Quijote",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "books",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "nombre",
+                            "value": "Quijote"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "4. Registrar el prestamo de un libro",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"book_id\": 1,\n  \"usuario\": {\n    \"nombre\": \"Juan Perez\",\n    \"correo\": \"juan@ejemplo.com\"\n  }\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/loans/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "loans",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "5. Marcar un libro como devuelto",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/loans/return/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "loans",
+                        "return",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "6. Eliminar el registro de un prestamo",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8000/loans/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "loans",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Prueba Error 400 (Falta pagina)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"nombre\": \"A\",\n  \"año\": 1000\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/books/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "books",
+                        ""
+                    ]
+                }
+            }
+        }
+    ]
+}
