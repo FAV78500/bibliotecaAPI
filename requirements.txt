@@ -1,4 +1,8 @@
+# Framework web rápido y moderno para construir APIs con Python
 fastapi
+# Servidor web (ASGI) ultrarrápido para ejecutar la aplicación de FastAPI
 uvicorn
+# Librería vital para el parseo y validación de tipos de datos, muy utilizada por FastAPI
 pydantic
+# Dependencia adicional necesaria para la validación del campo de correo (EmailStr) en Pydantic
 email-validator
